@@ -61,3 +61,114 @@ function fruitProcessor(apples, oranges) {
 }
 
 console.log(fruitProcessor(4, 3));
+
+// Methods for Arrays
+const friends = ['Bubbles', 'Buttercup', 'Blossom'];
+
+// .push adds to the end of the array
+friends.push('Michael');
+console.log(friends);
+
+// .unshift adds to the beginning of the array
+friends.unshift('Nala');
+console.log(friends);
+
+// .pop removes the last element and the return value is the element that was removed
+const popped = friends.pop();
+console.log("You removed your friend:", popped);
+console.log(friends);
+
+// .shift removes the first element
+friends.shift();
+console.log(friends);
+
+// .indexOf to get the index # of the element, and -1 if it doesn't exist
+console.log(friends.indexOf('Blossom'));
+console.log(friends.indexOf('Faker'));
+
+// .includes will return a boolean to determine if the element exist in the array
+console.log(friends.includes('Bubbles'));
+console.log(friends.includes('Nobody'));
+
+
+// FOR LOOPS
+// Three conditions of where it starts, how long it'll run, and how it increases.
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
+}
+
+const personArray = [
+  'Michelle',
+  'Smith',
+  1990,
+  'teacher',
+  ['Bobby','Sarah','David'],
+  true
+];
+
+const types = [];
+
+for (let i = 0; i < personArray.length; i++) {
+  console.log(personArray[i], typeof personArray[i]);
+
+  // types[i] = typeof personArray[i];
+  types.push(typeof personArray[i]);
+}
+
+console.log(types);
+
+const years = [1957, 1987, 1990, 2015];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages.push(2022 - years[i])
+}
+
+console.log(ages);
+
+// Example of continue
+console.log(`---STRINGS ONLY---`)
+for (let i = 0; i < personArray.length; i++) {
+  // if the typeof is not a string, skip it and go to the next iteration
+  if (typeof personArray[i] !== 'string') continue;
+  console.log(personArray[i], typeof personArray[i]);
+}
+
+// Example of break
+console.log(`---BREAK AT THE FIRST NUMBER---`)
+for (let i = 0; i < personArray.length; i++) {
+  // if the typeof is a number, terminate and exit the function immediately
+  if (typeof personArray[i] === 'number') break;
+  console.log(personArray[i], typeof personArray[i]);
+}
+
+// Looping backwards
+for (let i = personArray.length -1; i >= 0; i--) {
+  console.log(personArray[i]);
+}
+
+// Looping within loops
+for (let exercise = 1; exercise <= 3; exercise++){
+  console.log(`===Starting exercise ${exercise}===`)
+  for (let rep = 1; rep < 6; rep++){
+    console.log(`Lifting weights ${rep} 🏋️‍♀️`)
+  }
+}
+
+// WHILE LOOP
+// Can only specify one condition of how long it runs inside the brackets, the other two conditions are specified elsewhere.
+// It's more flexible and doesn't need a counter.
+let rep = 1;
+while (rep <= 10) {
+  console.log(`Lifting weight repition ${rep}`)
+  rep++
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+// console.log(dice)
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log(`Loop about to end...`)
+}
